@@ -84,7 +84,7 @@ const Registration = () => {
         try {
             if (isLogin) {
                 // LOGIN API
-                const res = await axios.post("http://localhost:5000/api/auth/login", {
+                const res = await axios.post("https://taskflowapp-1-gy8v.onrender.com/api/auth/login", {
                     email: formData.email,
                     password: formData.password,
                 });
@@ -95,14 +95,14 @@ const Registration = () => {
                 navigate("/dashboard");
             } else {
                 // REGISTER API
-                await axios.post("http://localhost:5000/api/auth/register", {
+                await axios.post("https://taskflowapp-1-gy8v.onrender.com/api/auth/register", {
                     name: formData.name,
                     email: formData.email,
                     password: formData.password,
                 });
 
                 setMessage("Account created successfully! Please log in.");
-                setIsLogin(true); // switch to login
+                setIsLogin(true);
                 setFormData({
                     name: "",
                     email: "",
